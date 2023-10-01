@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>news detail page</title>
-</head>
-<body>
+{% extends 'news/base.html' %}
+{% load static %}
+
+
+{% block title %}  {% endblock title %}
+
+{% block content %}
 <h1>{{ news.title}}</h1>
 <p> Published date : {{news.publish_time}}</p>
 <p> {{news.body | linebreaks }} </p>
-</body>
-</html>
+
+<div class="card-footer text-center">
+    <a href="{% url 'news_update' news.slug %} ">Tahrirlash</a> |
+    <a href="{% url 'news_delete' news.slug %} ">O`chirish</a>
+
+
+</div>
+{% endblock content %}

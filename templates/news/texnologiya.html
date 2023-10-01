@@ -1,0 +1,24 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+{% for news in texnologiya_yangiliklar %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+
+            <img src="{{ news.image.url }}" alt="{{ news.title }}">
+             <h3>{{ news.title }}</h3>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endfor %}
+
+{% endblock content %}
